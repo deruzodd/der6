@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>сайт точка ком</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1 class="site-title animated-header"><a href="index.html">Овнейдж</a></h1>
+        <div class="hamburger-menu">
+            <div class="hamburger-icon"></div>
+            <div class="hamburger-icon"></div>
+            <div class="hamburger-icon"></div>
+        </div>
+    </header>
+    <nav>
+        <ul class="nav-list">
+            <li><a href="#main" class="tab-link">Главная</a></li>
+            <li><a href="#me" class="tab-link">Обо мне</a></li>
+            <li><a href="#education" class="tab-link">Образование</a></li>
+            <li><a href="#contact-section" class="tab-link">Контактные данные</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="main" class="tab-content">
+            <h2>Эта страница создана исключительно для практики</h2>
+            <h3>Это видео мотивация для предстоящего дня:</h3>
+            <iframe width="640" height="480" src="https://www.youtube.com/embed/ygUQbW90aXZhdGlvbiB2aWRlbw%3D%3D" frameborder="0" allowfullscreen></iframe>
+        </section>
+        <section id="me" class="tab-content hidden">
+            <div class="profile">
+                <div class="profile-image">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYnS600QuWin5RHi0wxJGcBOPzIYygPnEAyO1vVbzUxQ&s" alt="Мое фото" width="200" height="200">
+                </div>
+                <div class="profile-info">
+                    <p>Здравствуйте, меня зовут Нуралы, мне 17 лет, люблю играть и читать, увлекаюсь плаванием и баскетболом</p>
+                </div>
+            </div>
+        </section>
+        <section id="education" class="tab-content hidden">
+            <h2>Образование</h2>
+            <table>
+                <tr>
+                    <th>Учебное заведение</th>
+                    <th>Местоположение</th>
+                    <th>Год окончания</th>
+                </tr>
+                <tr>
+                    <td>Школа №5</td>
+                    <td>Город Лисаковск, Костанайская область</td>
+                    <td>2015</td>
+                </tr>
+                <tr>
+                    <td>Школа №30 Общеобразовательная</td>
+                    <td>Город Усть-Каменогорск, ВКО</td>
+                    <td>2022</td>
+                </tr>
+                <tr>
+                    <td>Astana IT University</td>
+                    <td>Город Астана, Акмолинская область</td>
+                    <td>2025</td>
+                </tr>
+            </table>
+        </section>
+        <section id="contact-section" class="tab-content hidden">
+            <h2>Контактные данные</h2>
+            <form class="contact-form">
+                <label for="name">Имя:</label>
+                <input type="text" id="name" name="name" required>
+        
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+        
+                <label for="message">Сообщение:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+        
+                <button type="submit">Отправить</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <address>
+            <p>Адрес: Кунаева, Астана, Казахстан</p>
+            <p>Телефон: +7 (555) 171-5555</p>
+            <p>Email: cabriol@inbox.ru</p>
+        </address>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const tabLinks = document.querySelectorAll(".tab-link");
+            const sections = document.querySelectorAll(".tab-content");
+
+            tabLinks.forEach((link) => {
+                link.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    sections.forEach((section) => {
+                        section.classList.add("hidden");
+                    });
+                    const targetId = link.getAttribute("href").substring(1);
+                    const targetSection = document.getElementById(targetId);
+                    targetSection.classList.remove("hidden");
+                });
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const tabLinks = document.querySelectorAll(".tab-link");
+            const sections = document.querySelectorAll(".tab-content");
+            const hamburger = document.querySelector(".hamburger-menu");
+            const navList = document.querySelector(".nav-list");
+    
+            tabLinks.forEach((link) => {
+                link.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    sections.forEach((section) => {
+                        section.classList.add("hidden");
+                    });
+                    const targetId = link.getAttribute("href").substring(1);
+                    const targetSection = document.getElementById(targetId);
+                    targetSection.classList.remove("hidden");
+                    
+                    // Закрываем меню после выбора элемента
+                    navList.classList.remove("active");
+                });
+            });
+    
+            hamburger.addEventListener("click", () => {
+                // Переключаем видимость меню при клике на гамбургер-иконку
+                navList.classList.toggle("active");
+            });
+        });
+    </script>
+    
+</body>
+</html>

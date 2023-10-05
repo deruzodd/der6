@@ -1,0 +1,273 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+nav {
+    background-color: #444;
+    padding: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+main {
+    padding: 20px;
+    max-width: 100%;
+    overflow-x: 100%;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+@media screen and (max-width: 768px) {
+    nav ul {
+        text-align: center;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+}
+.hidden { 
+    display: none; 
+}
+.tab-content.hidden {
+    display: none;
+}
+.profile {
+    display: flex;
+    align-items: center;
+}
+.profile-image {
+    border: 2px solid #333;
+    padding: 10px;
+    margin-right: 20px;
+}
+.profile-info {
+    flex: 1;
+}
+.profile h2 {
+    font-size: 24px;
+}
+.profile img {
+    max-width: 100%;
+    height: auto;
+}
+#education table {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+#education th, #education td {
+    border: 1px solid #333;
+    padding: 8px;
+    text-align: left;
+    white-space: nowrap;
+}
+#education th {
+    background-color: #333;
+    color: #fff;
+}
+iframe {
+    max-width: 100%;
+    height: auto;
+}
+
+.nav-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.tab-link {
+    text-decoration: none;
+    color: aqua;
+    font-weight: bold;
+    padding: 5px 10px;
+    border: 2px solid aqua;
+    border-radius: 5px;
+    margin: 5px;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.tab-link:hover {
+    background-color: aqua;
+    color: white;
+}
+
+.site-title {
+    background-color: aqua;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px; 
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease; 
+}
+
+.site-title a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.site-title:hover {
+    background-color: lightseagreen;
+}
+
+.contact-section {
+    margin: 20px;
+}
+
+.contact-section h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.contact-form {
+    max-width: 400px;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form button {
+    background-color: aqua;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: lightseagreen;
+}
+
+.animated-header {
+    background: linear-gradient(45deg, #ff00ff, #00ffff, #420c42);
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s ease infinite;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+@media screen and (max-width: 768px) {
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    /* Дополнительные стили для телефонов */
+    main {
+        font-size: 16px;
+    }
+
+    .profile-image {
+        margin-right: 0;
+        text-align: center;
+    }
+
+    .profile-info {
+        margin-top: 10px;
+    }
+
+    #education table {
+        margin-top: 10px;
+    }
+    nav ul {
+        display: none; /* Скрываем список ссылок */
+    }
+
+    .hamburger-menu {
+        display: block; /* Показываем гамбургер-иконку */
+        text-align: right;
+        padding: 10px;
+        cursor: pointer;
+    }
+
+    .hamburger-icon {
+        width: 25px;
+        height: 3px;
+        background-color: #fff;
+        margin: 5px 0;
+    }
+
+    /* Стили для видимого меню после клика на гамбургер-иконку */
+    .nav-list.active {
+        display: block;
+    }
+}
+
+/* Стили для ноутбуков и компьютеров (ширина более 768px) */
+@media screen and (min-width: 769px) {
+    /* Дополнительные стили для ноутбуков и компьютеров */
+    main {
+        font-size: 18px;
+    }
+
+    .profile-image {
+        margin-right: 20px;
+        text-align: left;
+    }
+
+    .profile-info {
+        margin-top: 0;
+    }
+
+    #education table {
+        margin-top: 20px;
+    }
+}
